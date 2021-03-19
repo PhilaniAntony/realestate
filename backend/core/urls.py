@@ -10,6 +10,8 @@ urlpatterns = [
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('api/accounts/', include(('accounts.urls', 'accounts'), namespace='accounts')),
+    path('api/realtors/', include(('realtors.urls', 'realtors'), namespace='realtors')),
+    path('api/realtors/', include(('realtors.urls', 'listings'), namespace='listings')),
     path('admin/', admin.site.urls),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
